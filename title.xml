@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Calpurnii Siculi Bucolica</title>
+            <editor>Cesar Giarratano</editor>
+            <sponsor>Society for Classical Studies</sponsor>
+         </titleStmt>
+         <editionStmt>
+            <edition>Semantically encoded edition</edition>
+            <respStmt>
+               <resp>New annotations and encoding by</resp>
+               <name>Samuel J. Huskey</name>
+               <name>Hugh Cayless</name>
+            </respStmt>
+            <respStmt>
+               <resp>English translation of original Latin preface by</resp>
+               <name>Samuel J. Huskey</name>
+            </respStmt>
+         </editionStmt>
+         <publicationStmt>
+            <publisher>Digital Latin Library</publisher>
+            <address>
+               <street>650 Parrington Oval</street>
+               <addrLine>Carnegie Building 101</addrLine>
+               <settlement>Norman</settlement>
+               <name>OK</name>
+               <postCode>73071</postCode>
+               <country>USA</country>
+            </address>
+            <authority>University of Oklahoma</authority>
+            <pubPlace>Norman, OK</pubPlace>
+            <date>2019</date>
+            <availability>
+               <licence target="https://creativecommons.org/licenses/by-sa/4.0/legalcode">Creative
+                  Commons Attribution-ShareAlike 4.0 International Licence (CC BY-SA 4.0)</licence>
+            </availability>
+         </publicationStmt>
+         <seriesStmt>
+            <title level="s">Library of Digital Latin Texts</title>
+            <biblScope unit="volume">1</biblScope>
+            <idno type="DOI">10.9999/zenodo.2225582</idno>
+            <idno type="ISBN">978-0-000-00000-0</idno>
+         </seriesStmt>
+         <sourceDesc>
+            <p>Information about the source</p>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <p>Some text here.</p>
+      </body>
+   </text>
+</TEI>
