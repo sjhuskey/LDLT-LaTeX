@@ -1,0 +1,81 @@
+\documentclass[11pt,twoside]{article}
+
+\usepackage[margin=1in]{geometry}
+
+% This adds a dot under each character. Cribbed from https://www.queryxchange.com/q/24_253203/how-to- repeat-over-all-characters-in-a-string/
+\usepackage{stackengine}
+\newcommand\chariterate[2][c]{\if w#1\worditeratehelper#2 \relax\relax\else
+  \chariteratehelpA#2 \relax\relax\fi}
+\def\chariteratehelpA#1 #2\relax{%
+  \chariteratehelpB#1\relax\relax%
+  \ifx\relax#2\else\ \chariteratehelpA#2\relax\fi
+}
+\def\chariteratehelpB#1#2\relax{%
+  \charop{#1}%
+  \ifx\relax#2\else
+    \chariteratehelpB#2\relax%
+  \fi
+}
+\def\worditeratehelper#1 #2\relax{%
+  \wordop{#1}%
+  \ifx\relax#2\else\ \worditeratehelper#2\relax\fi
+}
+\def\charop#1{#1}
+\def\wordop#1{#1}
+
+% This is what puts the dots under the letters. It should probably be renamed so that it's more meaningful.
+\def\charopB{%
+  \def\useanchorwidth{T}%
+  \def\stacktype{L}%
+  \def\stackalignment{c}%
+  \renewcommand\charop[1]{\stackunder[3pt]{##1}{.}}%
+}
+
+% Repeating characters (e.g., for X missing characters in <gap>)
+\makeatletter
+\newcount\missing@count
+\newcommand{\missing}[2]{%
+  \begingroup
+  \missing@count=\z@
+  \@whilenum\missing@count<#1\do{#2\advance\missing@count\@ne}%
+  \endgroup
+}
+\makeatother
+
+% Lacuna (cribbed from Jeff Witt)
+\newcommand{\lacuna}{{\textasteriskcentered\textasteriskcentered\textasteriskcentered}}
+
+% Corruption (cribbed from Jeff Witt)
+ \newcommand{\corruption}[1]{\textdagger#1\textdagger}
+
+\begin{document}
+
+Here is some text uncertainly restored (§8.8.2): \charopB \chariterate{ame}
+
+\bigskip
+
+Here is a gap of three illegible characters (§12.8.2): [\missing{3}{\charopB \chariterate{\enspace}}]
+
+\bigskip
+
+Here are some unclear characters followed by a gap of 10 illegible characters: \charopB \chariterate{a\enspace tenebat\enspace aram}[\missing{10}{\charopB \chariterate{\enspace}}]
+
+\bigskip
+
+Here is a lacuna (§8.8.3): \lacuna{}
+
+\bigskip
+
+Here is some text that has been supplied by conjecture (§12.12.7.2.1): <cedendo>
+
+\bigskip
+
+Here is a deletion by a scribe in a witness (§12.12.2): ⟦la⟧ la li
+
+\bigskip
+
+Here is some text marked as inauthentic by an editor: \{la la la\}
+
+\bigskip
+
+Here is some text marked as hopelessly corrupt: \corruption{hopelessly corrupt}\end{document}
