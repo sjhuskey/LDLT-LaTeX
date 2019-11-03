@@ -1,4 +1,3 @@
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Formal Book Title Page
 % LaTeX Template
@@ -21,7 +20,7 @@
 
 \documentclass[a4paper, 11pt, oneside]{book} % A4 paper size, default 11pt font size and oneside for equal margins
 
-\usepackage{xltxtra,fontspec,xunicode}
+\usepackage{xltxtra,fontspec,xunicode,xcolor}
 
 \usepackage[T1]{fontenc}
 
@@ -29,6 +28,17 @@
 
 \usepackage{graphicx} % Insert images
 \graphicspath{ {./images/} }
+
+\usepackage{hyperref} % For rendering hyperlinks.
+
+\hypersetup{
+    colorlinks,
+    linkcolor={red!50!black},
+    citecolor={blue!50!black},
+    urlcolor={blue!80!black}
+}
+
+\usepackage{textcomp} % For copyright symbol.
 
 
 \begin{document}
@@ -46,7 +56,7 @@
 
 \vspace{1\baselineskip} % Whitespace above the title
 
-\textsc{\Huge Calpurnii Siculi Bucolica} % Title
+\textsc{\Huge Miracula sancte Frideswide} % Title
 
 \vspace{2.25\baselineskip} % Whitespace below the title
 
@@ -58,23 +68,24 @@ Edited By
 
 \vspace{0.5\baselineskip} % Whitespace before the editors
 
-{\scshape\LARGE Cesar Giarratano} % Editor list
+{\scshape\LARGE Andrew Dunning} % Editor list
 
 \vspace{0.5\baselineskip} % Whitespace below the editor list
 \rule{\textwidth}{0.4pt}\vspace*{-\baselineskip}\vspace{3.2pt} % Thin horizontal rule
 \rule{\textwidth}{1.6pt} % Thick horizontal rule
 
-\vspace{12\baselineskip} % Whitespace below the title and editor block
-
 %------------------------------------------------
 %	Series
 %------------------------------------------------
-
-{\scshape\Large Society for Classical Studies}\\
+\vspace{8\baselineskip} % Whitespace below the title and editor block
+{\scshape\Large Medieval Academy of America}\\
 \medskip % Whitespace
-{\scshape\Large Library of Digital Latin Texts}\\
+{\scshape\Large Library of Digital Latin Texts: Working Texts}\\
 \vspace{2\baselineskip} % Whitespace
 
+{\scshape \normalsize Samuel J. Huskey, General Editor}\\
+
+\vspace{2\baselineskip} % Whitespace
 {\large Volume 1}\\
 \vfill % Whitespace between editor names and publisher logo
 
@@ -90,4 +101,29 @@ Edited By
 {\normalsize 2019}
 \end{titlepage}
 %----------------------------------------------------------------------------------------
+% Copyright Page
+%----------------------------------------------------------------------------------------
+\thispagestyle{empty}
+\vspace*{\baselineskip} % White space at the top of the page
+\vspace{12\baselineskip} % Whitespace
+\centering
+{\scshape \LARGE The Digital Latin Library}\\650 Parrington Oval, Carnegie Building 101, Norman, OK  73071, USA
+\vspace{\baselineskip} % Whitespace
+
+\flushleft
+\small
+{\scshape The Digital Latin Library} publishes the \textit{Library of Digital Latin Texts: Working Texts} under the authority of The University of Oklahoma. Individual volumes are reviewed and sponsored by the Society for Classical Studies, the Medieval Academy of America, or the Renaissance Society of America, depending on the era of the text(s).
+
+\vspace{2\baselineskip} % Whitespace
+
+Volumes are published under the Creative
+            Commons Attribution-ShareAlike 4.0 International Licence (CC BY-SA 4.0): \url{https://creativecommons.org/licenses/by-sa/4.0/legalcode}.
+
+\vspace{2\baselineskip} % Whitespace
+
+\textcopyright  Andrew Dunning, 2019.
+
+\vspace{2\baselineskip} % Whitespace
+
+Additional TEI-XML encoding by Samuel J. Huskey.
 \end{document}
